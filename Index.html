@@ -1,10 +1,65 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Meri Pehli Website</title>
-  </head>
-  <body>
-    <h1>Namaste Duniya!</h1>
-    <p>Yeh mera pehla web page hai.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechnoSetu - Hyperlocal Services</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f2f2f2; }
+    h1 { color: #007bff; }
+    label { display: block; margin: 10px 0 5px; }
+    input, select, button { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; }
+    button { background: #007bff; color: #fff; border: none; }
+    footer { margin-top: 30px; text-align: center; font-size: 12px; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>TechnoSetu 🛠️</h1>
+  <p>Your Hyperlocal Service Partner</p>
+
+  <h2>Book a Service</h2>
+  <label>Name:</label>
+  <input type="text" id="name" placeholder="Your Name" />
+  
+  <label>Phone:</label>
+  <input type="tel" id="phone" placeholder="Your Mobile Number" />
+  
+  <label>Address:</label>
+  <input type="text" id="address" placeholder="Your Address" />
+
+  <label>Service:</label>
+  <select id="service">
+    <option value="Electrician">Electrician</option>
+    <option value="Plumber">Plumber</option>
+    <option value="AC Repair">AC Repair</option>
+    <option value="Broadband Install">Broadband Install</option>
+    <option value="Carpenter">Carpenter</option>
+  </select>
+
+  <button onclick="sendBooking()">Book via WhatsApp</button>
+
+  <h3>About TechnoSetu</h3>
+  <p>TechnoSetu connects you with trusted local technicians for daily home services. Fast, easy, reliable!</p>
+
+  <h3>Contact Us</h3>
+  <p>📞 <a href="tel:+919761248179">Call Now</a></p>
+  <p>💬 <a href="https://wa.me/919761248179" target="_blank">WhatsApp Us</a></p>
+
+  <footer>© 2025 TechnoSetu | Made with ❤️</footer>
+
+  <script>
+    function sendBooking() {
+      var name = document.getElementById('name').value;
+      var phone = document.getElementById('phone').value;
+      var address = document.getElementById('address').value;
+      var service = document.getElementById('service').value;
+
+      var msg = `New Booking:%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}%0AService: ${service}`;
+      var whatsapp = `https://wa.me/919761248179?text=${msg}`;
+      window.open(whatsapp, '_blank');
+    }
+  </script>
+</body>
 </html>
